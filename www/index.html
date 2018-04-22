@@ -194,7 +194,8 @@
         <div data-role="content">
             <!-- <div id="words-screen" onclick="handleWordScreenClick(event)"> -->
             <div class="words-screen"
-                ontouchstart="$.mobile.changePage('#page-words', {transition: 'none'})">
+                ontouchstart="onSplashPageTouchStart()"
+                onclick="onSplashPageClick()">
                 <div class="words-table">
                     <div class="words-container">
                         <!-- Video på första sidan? -->
@@ -211,14 +212,14 @@
             <!-- <div id="words-screen" onclick="handleWordScreenClick(event)"> -->
             <div class="words-screen">
                 <div class="words-table">
-                    <div class="words-container" ontouchstart="nextWord()">
+                    <div class="words-container" ontouchstart="nextWord()" onclick="nextWordClick()">
                         <div id="words-word" class="words-word">WordGameTalk</div>
                     </div>
                 </div>
 				<img id="button-info" src="images/info.png" onclick="handleInfoButtonClick(event)"/>
-				<img id="button-previous-word" src="images/left.png" ontouchend="previousWord()"/>
-				<img id="button-next-word" src="images/right.png" ontouchend="nextWord()"/>
-				<img id="button-exit" src="images/close.png" ontouchend="exitApp()"/>
+				<img id="button-previous-word" src="images/left.png" ontouchend="previousWord()" onclick="previousWordClick()"/>
+				<img id="button-next-word" src="images/right.png" ontouchend="nextWord()" onclick="nextWordClick()"/>
+				<!--<img id="button-exit" src="images/close.png" ontouchend="exitApp()"/>-->
             </div>
         </div>
     </div>
@@ -415,10 +416,10 @@ Email: lennart@wordgame.se
 				setFontSize()
 			}
 
-			if (hyper.isAndroid())
+			/*if (hyper.isAndroid())
 			{
 				$('#button-exit').css('display', 'block')
-			}
+			}*/
 		}
 
 		function setFontSize()
@@ -431,29 +432,32 @@ Email: lennart@wordgame.se
 		/**
 		 * Exit the application.
 		 */
+    /*
+    // Not used.
 		function exitApp()
 		{
 			navigator.app.exitApp()
-		}
+    }
+    */
 
-        function selectLanguageAndGo(languageId)
-        {
-            selectLanguage(languageId)
-            $.mobile.changePage("#page-words", { transition: "none" })
-        }
+    function selectLanguageAndGo(languageId)
+    {
+        selectLanguage(languageId)
+        $.mobile.changePage("#page-words", { transition: "none" })
+    }
 
-        function selectLanguage(languageId)
+    function selectLanguage(languageId)
+    {
+        if (languageId != CurrentLanguage)
         {
-            if (languageId != CurrentLanguage)
-            {
-                CurrentLanguage = languageId
-                saveLanguageSelection()
-                WordDeck = AllWords[CurrentLanguage].slice(0)
-                shuffle()
-                WordDeckIndex = 0
-                showCurrentWord()
-            }
+            CurrentLanguage = languageId
+            saveLanguageSelection()
+            WordDeck = AllWords[CurrentLanguage].slice(0)
+            shuffle()
+            WordDeckIndex = 0
+            showCurrentWord()
         }
+    }
 
 		/**
 		 * Handle the backbutton event.
@@ -609,6 +613,8 @@ Email: lennart@wordgame.se
 			$.mobile.changePage("#page-info", {transition: "none"})
 		}
 
+    /*
+    // Not used.
 		function handleWordScreenClick(e)
 		{
 			console.log("handleWordScreenClick: " + e)
@@ -625,7 +631,8 @@ Email: lennart@wordgame.se
 			{
 				previousWord()
 			}
-		}
+    }
+    */
 
 		$("input[type='radio']").bind("change", function(event)
         {
@@ -708,10 +715,35 @@ Email: lennart@wordgame.se
 	{
 		window.open(url, '_blank', 'location=yes')
 	}
+  
+  function onSplashPageTouchStart()
+  {
+    $.mobile.changePage('#page-words', {transition: 'none'})
+  }
+  
+  function onSplashPageClick()
+  {
+    if (!isTouchDevice()) $.mobile.changePage('#page-words', {transition: 'none'})
+  }
 
+  function nextWordClick()
+  {
+    if (!isTouchDevice()) nextWord()
+  }
+
+  function previousWordClick()
+  {
+    if (!isTouchDevice()) previousWord()
+  }
+
+  function isTouchDevice()
+  {
+    return !!window.ontouchstart
+  }
+
+  // Initialize app.
 	initializeWordGame()
 
 	</script>
-	<script src="cordova.js"></script>
 </body>
 </html>
