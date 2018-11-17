@@ -1,0 +1,92 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #FFFFFF;
+	font-family: sans-serif;
+	text-decoration: none;
+}
+h2 {
+	font-size: 1.6em;
+	margin: 0.2em 0;
+}
+h3 {
+	font-size: 1.4em;
+	margin: 0.2em 0;
+}
+p, ul {
+	font-size: 1.2em;
+	margin: 0.5em 0;
+}
+a {
+	color: #3767A5;
+	font-weight: bold;
+}
+#page {
+	margin: 0 auto;
+	max-width: 920px;
+	color: #222222;
+	/*border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;*/
+}
+#heading {
+	padding: 0.3em 0 0.3em 0;
+	background: rgb(255,135,44);
+	color: #EEEEEE;
+	font-size: 2.5em;
+	font-weight: normal;
+	text-align: center;
+}
+#content {
+	margin: 1em 1em;
+}
+.box {
+	margin: 0.5em 0em;
+	padding: 0.2em 0.2em;
+	background-color: #FFFFFF;
+	font-weight: normal;
+}
+.myscreenshot {
+  float:right;
+  width:240px;
+  margin-left:30px;
+  margin-bottom: 20px;
+}
+.mybutton {
+  display: block;
+  background: rgb(255,135,44);
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 300px;
+}
+.mybutton-extra-top-margin {
+  margin-top: 30px;
+}
+.myiframe-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  margin-bottom: 30px;
+  max-width: 600px;
+  clear: both;
+}
+.myiframe-container iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+@media screen and (max-width: 665px)
+{
+.myscreenshot
+{
+  display: none;
+}
+}
