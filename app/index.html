@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8">
 
+  <!--
   <script src="js/hyper-os.js"></script>
   <script src="js/hyper-viewport.js"></script>
+  -->
 
   <title>WordGame</title>
 
@@ -165,7 +167,9 @@
     */
     </style>
 
-  <!--<script src="js/hyper-jquery-mobile-ios7-patch.js"></script>-->
+  <!--
+  <script src="js/hyper-jquery-mobile-ios7-patch.js"></script>
+  -->
 </head>
 
 <body>
@@ -207,7 +211,7 @@
             <div class="words-screen">
                 <div class="words-table">
                     <div class="words-container" ontouchstart="nextWord()" onclick="nextWordClick()">
-                        <div id="words-word" class="words-word">WordGameTalk</div>
+                        <div id="words-word" class="words-word">WordGame</div>
                     </div>
                 </div>
         <img id="button-info" src="images/info.png" onclick="handleInfoButtonClick(event)"/>
@@ -222,7 +226,7 @@
     <div data-role="page" id="page-info">
 
         <div data-role="header" data-position="fixed" data-theme="a" >
-            <h1>WordGameTalk</h1>
+            <h1>WordGame</h1>
             <a data-role="button"
                 href="#page-words"
                 class="ui-btn-left"
@@ -242,7 +246,7 @@
           <img id="video-icon" src="images/video.png"/>
           Video</a>
       </p>
-
+        <!--ADD WORD LISTS BELOW-->
             <ul data-role="listview" data-inset="true">
                 <li data-role="list-divider" data-theme="a">Word Lists</li>
                 <li><a href="javascript:void()"
@@ -280,7 +284,7 @@
     <div data-role="page" id="page-manual-se">
 
         <div data-role="header" data-position="fixed" data-theme="a" >
-            <h1>WordGameTalk</h1>
+            <h1>WordGame</h1>
             <a data-role="button"
                 href="#page-info"
                 class="ui-btn-left"
@@ -288,9 +292,9 @@
         </div>
 
         <div data-role="content">
-<h2>Välkommen till WordGameTalk!</h2>
+<h2>Välkommen till WordGame!</h2>
 
-<p>Med WordGameTalk är det roligt att samtala med dina vänner på det språk du lär dig! Du använder språkkunskaper du redan har och det räcker ofta långt. Rätt eller fel spelar ingen roll. </p>
+<p>Med WordGame är det roligt att samtala med dina vänner på det språk du lär dig! Du använder språkkunskaper du redan har och det räcker ofta långt. Rätt eller fel spelar ingen roll. </p>
 
 <p>Så här funkar det:</p>
 
@@ -306,7 +310,7 @@ Videoikonen är från Nuvola-ikonerna av David Vignoni (www.icon-king.com/projec
 
 <p>Kontakt:</p>
 <p>
-WordGameTalk har utvecklats av Lennart Mogren och Mikael Kindborg.</p>
+WordGame har utvecklats av Lennart Mogren (koncept och ordlistor) och Mikael Kindborg (progammering).</p>
 <p>
 Epost:<br/>
 lennart@wordgame.se - <a href="http://wordgame.se" target="_blank">wordgame.se</a><br/>
@@ -323,7 +327,7 @@ mikael@kindborg.com - <a href="http://kindborg.com" target="_blank">kindborg.com
     <div data-role="page" id="page-manual-en">
 
         <div data-role="header" data-position="fixed" data-theme="a" >
-            <h1>WordGameTalk</h1>
+            <h1>WordGame</h1>
             <a data-role="button"
                 href="#page-info"
                 class="ui-btn-left"
@@ -331,9 +335,9 @@ mikael@kindborg.com - <a href="http://kindborg.com" target="_blank">kindborg.com
         </div>
 
         <div data-role="content">
-<h2>Welcome to WordGameTalk!</h2>
+<h2>Welcome to WordGame!</h2>
 
-<p>WordGameTalk – it’s about having fun with your friends, using language skills
+<p>WordGame – it’s about having fun with your friends, using language skills
 you already have! Right or wrong, it doesn’t matter. Speaking the language
 you want to learn is what matters.</p>
 
@@ -357,7 +361,7 @@ Video icon from the Nuvola icon set by David Vignoni (www.icon-king.com/projects
 
 <p>Contact:</p>
 <p>
-WordGameTalk was made by Lennart Mogren and Mikael Kindborg.</p>
+WordGame was created by Lennart Mogren and programmed by Mikael Kindborg.</p>
 <p>
 Email:<br/>
 lennart@wordgame.se - <a href="http://wordgame.se" target="_blank">wordgame.se</a><br/>
@@ -482,8 +486,8 @@ mikael@kindborg.com - <a href="http://kindborg.com" target="_blank">kindborg.com
 
     function showVideoPage()
     {
-      window.location.assign('http://www.wordgame.se/wordgametalk/video.html')
-      //openBrowser('http://www.wordgame.se/wordgametalk/video.html')
+      window.location.assign('http://www.wordgame.se/wordgame/video.html')
+      //openBrowser('http://www.wordgame.se/wordgame/video.html')
 
       /*
       var w = window.innerWidth - 30
